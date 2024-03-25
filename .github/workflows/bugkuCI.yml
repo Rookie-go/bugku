@@ -1,8 +1,9 @@
 name: Bugku签到
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # 每天UTC时间的午夜运行
+  push:
+    branches:
+      - main
 
 jobs:
   bugku_checkin:
