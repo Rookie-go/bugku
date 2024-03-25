@@ -105,6 +105,6 @@ if __name__ == '__main__':
 # git add .
 # git commit -m 'first'
 # git branch -M main
-# git remote add origin https://github.com/Rookie-go/S0rry.git
+# git remote add origin https://github.com/Rookie-go/bugku.git
 # git push -u origin main
 
