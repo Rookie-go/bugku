@@ -2,7 +2,7 @@ name: Bugku签到
 
 on:
   schedule:
-    - cron: '10 5 * * *'  # 每天上午五点十分运行（UTC 时间）
+    - cron: '35 5 * * *'
 
 jobs:
   bugku_checkin:
