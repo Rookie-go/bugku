@@ -49,8 +49,7 @@ class BugkuCK(object):
 
 def send_text(title, content):
     dingtalk_access_token = os.environ.get("DINGTALK_ACCESS_TOKEN")
-    url = f"https://oapi.dingtalk.com/robot/send?access_token=610885a19bb68ffdc7953485032db5f9daff0b99465c74686d56bc4a3f772bc5"
-    #610885a19bb68ffdc7953485032db5f9daff0b99465c74686d56bc4a3f772bc5
+    url = f"https://oapi.dingtalk.com/robot/send?access_token={dingtalk_access_token}"
     data = {
         "msgtype": "markdown",
         "markdown": {
