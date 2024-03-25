@@ -1,0 +1,31 @@
+name: Bugku签到
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天UTC时间的午夜运行
+
+jobs:
+  bugku_checkin:
+    name: Bugku签到
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码库
+        uses: actions/checkout@v2
+      
+      - name: 设置 Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: 运行 Bugku签到 脚本
+        env:
+          BUGKU_USERNAME: ${{ secrets.BUGKU_USERNAME }}
+          BUGKU_PASSWORD: ${{ secrets.BUGKU_PASSWORD }}
+          DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
+        run: python Checkin.py
