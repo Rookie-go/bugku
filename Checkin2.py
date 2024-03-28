@@ -10,8 +10,8 @@ def login():
         "https://www.nssctf.cn/api/user/login/",
         headers={"User-Agent": USER_AGENT},
         data={
-            "username": os.environ["NSS_USERNAME"],
-            "password": os.environ["NSS_PASSWORD"],
+            "username": "Rorye",
+            "password": "jyj123456.",
         },
     )
     cookies = dict(resp.cookies)
