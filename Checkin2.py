@@ -9,8 +9,8 @@ def login():
     resp = requests.post(
         "https://www.nssctf.cn/api/user/login/",
         headers={"User-Agent": USER_AGENT},
-        username123 = os.environ.get("BUGKU_USERNAME")
-        password123 = os.environ.get("BUGKU_PASSWORD")
+        username123 = os.environ.get("BUGKU_USERNAME"),
+        password123 = os.environ.get("BUGKU_PASSWORD"),
         data={
             "username": "username123",
             "password": "password123",
