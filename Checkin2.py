@@ -14,8 +14,9 @@ def login():
             "password": os.environ.get("NSS_PASSWORD"),
         },
     )
+    json_data = resp.json() 
     cookies = dict(resp.cookies)
-    cookies["token"] = resp.json()["data"]["token"]
+    cookies["token"] = json_data["data"]["token"]
     return cookies
 
 
