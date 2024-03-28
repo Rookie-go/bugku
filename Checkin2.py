@@ -10,7 +10,7 @@ def login():
         "https://www.nssctf.cn/api/user/login/",
         headers={"User-Agent": USER_AGENT},
         data={
-            "username": os.environ["NSS_USERNAME"],
+            "username": "Rorye",
             "password": os.environ["NSS_PASSWORD"],
         },
     )
