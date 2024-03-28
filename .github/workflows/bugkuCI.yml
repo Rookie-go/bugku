@@ -2,7 +2,7 @@ name: Bugku签到
 
 on:
   schedule:
-    - cron: '35 5 * * *'
+    - cron: '0 2 * * *'
 
 jobs:
   bugku_checkin:
@@ -29,3 +29,9 @@ jobs:
           BUGKU_PASSWORD: ${{ secrets.BUGKU_PASSWORD }}
           DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
         run: python Checkin.py
+      - name: 运行NSS签到脚本
+        env:
+          USERNAME2: ${{ secrets.USERNAME2 }}
+          PASSWORD2: ${{ secrets.PASSWORD2 }}
+          DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
+        run: python Checkin2.py
