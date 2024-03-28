@@ -1,8 +1,12 @@
 name: Bugku签到
 
+# on:
+#   schedule:
+#     - cron: '0 2 * * *'
 on:
-  schedule:
-    - cron: '0 2 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   bugku_checkin:
