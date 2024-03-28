@@ -59,7 +59,7 @@ def main():
     if coin_num is None:
         print("签到失败")
     else:
-        checkin_res="当前的金币为: {coin_num}"
+        checkin_res = "当前的金币为: {}".format(coin_num)
         send_text("nss签到通知", checkin_res)
         print(f"签到成功，当前金币数量为 {coin_num}")
 if __name__ == "__main__":
