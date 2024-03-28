@@ -6,27 +6,16 @@ USER_AGENT = (
 )
 def login():
     """使用账号密码登陆 NSSCTF"""
-    # 从环境变量中获取用户名和密码
-    username = os.environ.get("NSS_USERNAME")
-    password = os.environ.get("NSS_PASSWORD")
-    
-    # 构造请求参数
-    data = {
-        "username": username,
-        "password": password,
-    }
-    
-    # 发送登录请求
     resp = requests.post(
         "https://www.nssctf.cn/api/user/login/",
         headers={"User-Agent": USER_AGENT},
-        data=data,
+        data={
+            "username": os.environ["NSS_USERNAME"],
+            "password": os.environ["NSS_PASSWORD"],
+        },
     )
-    
-    # 解析响应并获取 cookies
     cookies = dict(resp.cookies)
     cookies["token"] = resp.json()["data"]["token"]
-    
     return cookies
 
 
