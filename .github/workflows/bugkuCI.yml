@@ -35,7 +35,7 @@ jobs:
         run: python Checkin.py
       - name: 运行NSS签到脚本
         env:
-          USERNAME2: ${{ secrets.USERNAME2 }}
-          PASSWORD2: ${{ secrets.PASSWORD2 }}
+          USERNAME2: ${{ secrets.USERNAME }}
+          PASSWORD2: ${{ secrets.PASSWORD }}
           DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
         run: python Checkin2.py

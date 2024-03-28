@@ -14,9 +14,8 @@ def login():
             "password": os.environ.get("NSS_PASSWORD"),
         },
     )
-    json_data = resp.json() 
     cookies = dict(resp.cookies)
-    cookies["token"] = json_data["data"]["token"]
+    cookies["token"] = resp.json()["data"]["token"]
     return cookies
 
 
@@ -60,8 +59,8 @@ def main():
     if coin_num is None:
         print("签到失败")
     else:
-        checkin_res = "当前的金币为: {}".format(coin_num)
-        send_text("nss签到通知", checkin_res)
+        # checkin_res = f"当前的金币为: {coin_num}"
+        # send_text("Bugku签到通知", checkin_res)
         print(f"签到成功，当前金币数量为 {coin_num}")
 if __name__ == "__main__":
     main()
