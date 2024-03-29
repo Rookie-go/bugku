@@ -61,6 +61,8 @@ def send_text(title, content):
 if __name__ == "__main__":
     username = os.environ.get("NSS_USERNAME")
     password = os.environ.get("NSS_PASSWORD")
+    print(username)
+    print(password)
     NSS=login(username,password)
     cookies=NSS.login()
     signin(cookies)
