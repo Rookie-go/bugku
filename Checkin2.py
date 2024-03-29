@@ -61,8 +61,6 @@ def send_text(title, content):
 if __name__ == "__main__":
     username = os.environ.get("NSS_USERNAME")
     password = os.environ.get("NSS_PASSWORD")
-    print(username)
-    print(password)
     NSS=login(username,password)
     cookies=NSS.login()
     signin(cookies)
@@ -70,6 +68,6 @@ if __name__ == "__main__":
     if coin_num is None:
         print("签到失败")
     else:
-        # checkin_res = f"当前的金币为: {coin_num}"
-        # send_text("Bugku签到通知", checkin_res)
+        checkin_res = f"当前的金币为: {coin_num}"
+        send_text("Bugku签到通知", checkin_res)
         print(f"签到成功，当前金币数量为 {coin_num}")
