@@ -29,7 +29,7 @@ jobs:
       
       - name: 运行 nss签到 脚本
         env:
-          BUGKU_USERNAME: ${{ secrets.NSS_USERNAME }}
-          BUGKU_PASSWORD: ${{ secrets.NSS_PASSWORD }}
+          NSS_USERNAME: ${{ secrets.NSS_USERNAME }}
+          NSS_PASSWORD: ${{ secrets.NSS_PASSWORD }}
           DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
         run: python Checkin2.py
